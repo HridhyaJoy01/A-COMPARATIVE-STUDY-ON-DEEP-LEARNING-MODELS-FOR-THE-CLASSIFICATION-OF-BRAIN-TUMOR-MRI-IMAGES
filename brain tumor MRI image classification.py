@@ -118,6 +118,8 @@ val_datagen = tf.keras.preprocessing.image.ImageDataGenerator()
 train_data = train_datagen.flow(x_train, y_train, batch_size=32)
 val_data = val_datagen.flow(x_val, y_val, batch_size=32)
 
+"""CNN MODEL"""
+
 # Define the CNN model
 def create_cnn_model(input_shape, num_classes):
     model = Sequential()
@@ -184,6 +186,8 @@ plt.legend()
 plt.title('Training and Validation Loss')
 
 plt.show()
+
+"""CNN_GRU MODEL"""
 
 # Define the CNN-GRU model
 def create_cnn_gru_model(input_shape, num_classes):
@@ -260,6 +264,8 @@ plt.legend()
 plt.title('Training and Validation Loss')
 
 plt.show()
+
+"""INCEPTION V3"""
 
 num_classes = len(labels)
 
@@ -408,6 +414,8 @@ evaluate_model(cnn_gru_model, x_test, y_test, y_test_categorical, labels)
 print("InceptionV3 Model Evaluation:")
 evaluate_model(inception_model, x_test, y_test, y_test_categorical, labels)
 
+# plotting ROC curve
+
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import roc_curve, auc
@@ -474,6 +482,8 @@ model_names = ['best_cnn_model', 'best_cnn_gru_model', 'best_inception_model']
 # Plot ROC curves
 plot_roc_curves(model_paths, model_names, x_test, y_test, n_classes=4)
 
+# visualizing the features learned by CNN model
+
 import numpy as np
 import tensorflow as tf
 import cv2
@@ -534,6 +544,8 @@ cnn_model_path = '/content/drive/MyDrive/brain_tumor/best_cnn_model.h5'
 cnn_model = tf.keras.models.load_model(cnn_model_path)
 
 display_gradcam(image_path, cnn_model, 'conv2d_2')
+
+# visualizing the features learned by the inception v3 model
 
 import numpy as np
 import tensorflow as tf
