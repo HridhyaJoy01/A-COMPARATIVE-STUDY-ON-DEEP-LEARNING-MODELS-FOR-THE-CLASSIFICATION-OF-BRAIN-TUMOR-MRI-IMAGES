@@ -1,4 +1,4 @@
-This is a comparative study on 3 types of deep learning(machine learning) models for the classification of Brain Tumor MRI images.
+This repository is a comparative study on 3 types of deep learning(machine learning) models for the classification of Brain Tumor MRI images.
 This code compares which one is the best model among the three: A custom-built CNN model, A hybrid CNN-GRU model and a pre-trained Inception V3 model.
 steps involved : 1) importing necessary libraries for the classification 
                  2) Data preprocessing
@@ -10,4 +10,8 @@ steps involved : 1) importing necessary libraries for the classification
                  7) comparison
                  8) Feature selection 
 This classification have used an image dataset from kaggle (Brain Tumor MRI dataset) Available at: https://www.kaggle.com/datasets/masoudnickparvar/brain-tumor-mri-dataset. Which contains mostly JPEG format magnetic resonance images of brain tumors or no-tumors.
-
+Outputs of this study are the accuracies and losses(plots also) of each model, confusion matrics for visualising the performance of each model and the comparing ROC curve.
+common hyperparameters: optimizer-Adam
+                        loss function-Categoricalcrossentropy etc.
+Fcaed overfitting 
+Got the pretrained inception V3 as the best model among the three.                        
